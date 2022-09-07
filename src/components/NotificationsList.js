@@ -43,7 +43,7 @@ const NotificationsList = () => {
                     primary={item.text}
                     secondary={
                       <React.Fragment>
-                        <Box sx={{ mt: 2 }}>
+                        <Box component="span" sx={{ mt: 2 }}>
                           <Typography sx={inlineText} component="span">
                             {item.time}
                           </Typography>

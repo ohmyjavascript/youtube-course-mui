@@ -16,6 +16,7 @@ import {
 import SearchBar from './SearchBar';
 import UserProfile from '@components/UserProfile';
 import NotificationsList from '@components/NotificationsList';
+import Upload from '@components/Upload';
 
 const AppNavMenu = (props) => {
   return (
@@ -41,6 +42,7 @@ const AppNavMenu = (props) => {
             <SearchBar />
           </Box>
           <Box sx={hideOnMobile}>
+            <Upload />
             <NotificationsList />
             <UserProfile />
           </Box>
