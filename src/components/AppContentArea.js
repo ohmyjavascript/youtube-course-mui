@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import React, { useState } from 'react';
 import SideList from './SideList';
 import { appContentWrapper, flexColumnGrow } from '@styles/styles';
+import TabList from './Tablist';
 
 const AppContentArea = ({ isOpen }) => {
   const sideBarWidth = isOpen ? '70px' : '250px';
@@ -17,6 +18,16 @@ const AppContentArea = ({ isOpen }) => {
         }}
       >
         <SideList />
+      </Box>
+      <Box component="div" sx={flexColumnGrow}>
+        <Box
+          sx={{
+            my: 2,
+            width: `calc(100vw - ${sideBarWidth})`,
+          }}
+        >
+          <TabList />
+        </Box>
       </Box>
     </Box>
   );
