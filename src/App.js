@@ -1,11 +1,13 @@
 import './App.css';
-import Button from '@mui/material/Button';
+import { Box } from '@mui/material';
+import { appWrapper } from '@styles/styles';
+import AppNavMenu from '@navigation/AppNavMenu';
 
 function App() {
   return (
-    <div>
-      <Button variant="contained">Contained</Button>
-    </div>
+    <Box sx={appWrapper}>
+      <AppNavMenu />
+    </Box>
   );
 }
 
