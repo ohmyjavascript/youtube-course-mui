@@ -13,6 +13,7 @@ import {
   logoText,
   hideOnMobile,
 } from '@styles/styles';
+import SearchBar from './SearchBar';
 
 const AppNavMenu = (props) => {
   return (
@@ -33,6 +34,9 @@ const AppNavMenu = (props) => {
             <Typography variant="h6" component="div" sx={logoText}>
               YouTube
             </Typography>
+          </Box>
+          <Box sx={hideOnMobile}>
+            <SearchBar />
           </Box>
         </Box>
       </Toolbar>
