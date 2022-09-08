@@ -14,3 +14,7 @@ npm install @mui/icons-material --force
 - hooks
 - styles
 - themes
+
+```
+npm i axios --save --force
+```

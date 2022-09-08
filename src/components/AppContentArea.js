@@ -1,16 +1,29 @@
 import Box from '@mui/material/Box';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SideList from './SideList';
 import { appContentWrapper, flexColumnGrow } from '@styles/styles';
 import TabList from './Tablist';
 import CardList from './CardList';
-import { youtubeResponse } from '@data/app.data';
 import Shorts from './Shorts';
+import { getYoutubeAPIData } from '../api/axios';
 
 const AppContentArea = ({ isOpen }) => {
   const [hide, setHide] = useState(false);
-  const items1 = youtubeResponse.slice(0, 8);
-  const items2 = youtubeResponse.slice(8);
+  const [youtubeData, setYoutubeData] = useState([]);
+  const [search, setSearch] = useState('javascript');
+
+  useEffect(() => {
+    getYoutubeAPIData(search).then((response) => {
+      setYoutubeData(response.data.items);
+    });
+  }, [search]);
+
+  if (!youtubeData.length) {
+    return;
+  }
+
+  const items1 = youtubeData.slice(0, 8);
+  const items2 = youtubeData.slice(8);
 
   const hideShorts = () => {
     setHide(true);
@@ -18,6 +31,10 @@ const AppContentArea = ({ isOpen }) => {
 
   const undoHide = () => {
     setHide(false);
+  };
+
+  const onTabChange = (searchValue) => {
+    setSearch(searchValue);
   };
 
   const sideBarWidth = isOpen ? '70px' : '250px';
@@ -41,7 +58,7 @@ const AppContentArea = ({ isOpen }) => {
             width: `calc(100vw - ${sideBarWidth})`,
           }}
         >
-          <TabList />
+          <TabList onTabChange={onTabChange} />
         </Box>
         <Box
           component="div"
