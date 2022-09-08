@@ -1,22 +1,23 @@
 import Box from '@mui/material/Box';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import SideList from './SideList';
 import { appContentWrapper, flexColumnGrow } from '@styles/styles';
 import TabList from './Tablist';
 import CardList from './CardList';
 import Shorts from './Shorts';
 import { getYoutubeAPIData } from '../api/axios';
+import SearchContext from '../context/SearchContext';
 
 const AppContentArea = ({ isOpen }) => {
   const [hide, setHide] = useState(false);
   const [youtubeData, setYoutubeData] = useState([]);
-  const [search, setSearch] = useState('javascript');
+  const { searchText, onSearch } = useContext(SearchContext);
 
   useEffect(() => {
-    getYoutubeAPIData(search).then((response) => {
+    getYoutubeAPIData(searchText).then((response) => {
       setYoutubeData(response.data.items);
     });
-  }, [search]);
+  }, [searchText]);
 
   if (!youtubeData.length) {
     return;
@@ -34,7 +35,7 @@ const AppContentArea = ({ isOpen }) => {
   };
 
   const onTabChange = (searchValue) => {
-    setSearch(searchValue);
+    onSearch(searchValue);
   };
 
   const sideBarWidth = isOpen ? '70px' : '250px';
