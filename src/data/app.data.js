@@ -454,7 +454,7 @@ export const youtubeResponse = [
     etag: 'mjf4FW2UtZbz3ERoA28z0ZEyaIw',
     id: {
       kind: 'youtube#channel',
-      channelId: 'UCmXmlB4-HJytD7wek0Uo97A',
+      videoId: 'lI1ae4REbFM',
     },
     snippet: {
       publishedAt: '2018-12-25T10:37:24Z',
@@ -464,13 +464,19 @@ export const youtubeResponse = [
         'Launch your development career with project-based coaching - showcase your skills with practical development experience and ...',
       thumbnails: {
         default: {
-          url: 'https://yt3.ggpht.com/wg1TITEoPfxvBGfzuqWyt3bqm_qu35ZhMswUv3feetU3xNX_6wsAXZF40OlPIgY4TmqbqCmAZ1U=s88-c-k-c0xffffffff-no-rj-mo',
+          url: 'https://i.ytimg.com/vi/lI1ae4REbFM/default.jpg',
+          width: 120,
+          height: 90,
         },
         medium: {
-          url: 'https://yt3.ggpht.com/wg1TITEoPfxvBGfzuqWyt3bqm_qu35ZhMswUv3feetU3xNX_6wsAXZF40OlPIgY4TmqbqCmAZ1U=s240-c-k-c0xffffffff-no-rj-mo',
+          url: 'https://i.ytimg.com/vi/lI1ae4REbFM/mqdefault.jpg',
+          width: 320,
+          height: 180,
         },
         high: {
-          url: 'https://yt3.ggpht.com/wg1TITEoPfxvBGfzuqWyt3bqm_qu35ZhMswUv3feetU3xNX_6wsAXZF40OlPIgY4TmqbqCmAZ1U=s800-c-k-c0xffffffff-no-rj-mo',
+          url: 'https://i.ytimg.com/vi/lI1ae4REbFM/hqdefault.jpg',
+          width: 480,
+          height: 360,
         },
       },
       channelTitle: 'JavaScript Mastery',
